@@ -6,5 +6,60 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>vertical</title>
   </head>
-  <body></body>
+  <style>
+    .container {
+      width: 50%;
+      background-color: #f0f0f0;
+    }
+    .drag {
+      width: 100%;
+      border: 1px solid black;
+    }
+    .drag div {
+      display: flex;
+      justify-content: space-between;
+    }
+    .drag span {
+      display: inline-block;
+      text-align: center;
+      padding: 20px;
+    }
+    .drag input {
+      display: inline-block;
+    }
+  </style>
+  <body>
+    <div class="container">
+      <div class="drag" draggable="true">
+        <div>
+          <span>1</span>
+          <input type="button" value="1번 버튼" />
+        </div>
+      </div>
+      <div class="drag" draggable="true">
+        <div>
+          <span>2</span>
+          <input type="button" value="2번 버튼" />
+        </div>
+      </div>
+      <div class="drag" draggable="true">
+        <div>
+          <span>3</span>
+          <input type="button" value="3번 버튼" />
+        </div>
+      </div>
+      <div class="drag" draggable="true">
+        <div>
+          <span>4</span>
+          <input type="button" value="4번 버튼" />
+        </div>
+      </div>
+      <div class="drag" draggable="true">
+        <div>
+          <span>5</span>
+          <input type="button" value="5번 버튼" />
+        </div>
+      </div>
+    </div>
+  </body>
 </html>
