@@ -27,6 +27,10 @@
     .drag input {
       display: inline-block;
     }
+
+    .dragging {
+      border: 2px dashed yellowgreen;
+    }
   </style>
   <body>
     <div class="container">
@@ -63,3 +67,17 @@
     </div>
   </body>
 </html>
+<script>
+  const log = (name, el) => console.log(name, el);
+  const _ = (select) => document.querySelectorAll(select);
+
+  const drag = _(".drag");
+  const container = _(".container");
+
+  drag.forEach((node) => {
+    node.addEventListener("dragstart", () => {
+      log("start", this);
+      log("start", node);
+    });
+  });
+</script>

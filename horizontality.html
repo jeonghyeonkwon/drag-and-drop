@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.12.4.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <title>horizontaility</title>
+  </head>
+  <style>
+    .container {
+      width: 70%;
+      height: 500px;
+      background-color: #eee;
+      display: flex;
+    }
+    .drag {
+      /* background-color: aqua; */
+      height: 100%;
+    }
+    .form {
+      border: 1px solid gray;
+      background-color: #f0f0f0;
+
+      width: 100%;
+      height: 500px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      /* text-align: center; */
+    }
+    .span-form {
+      text-align: center;
+      vertical-align: middle;
+      /* background-color: aqua; */
+      display: flex;
+      align-items: center;
+      width: 100%;
+      height: 20%;
+    }
+    .form span {
+      /* background-color: yellowgreen; */
+      display: inline-block;
+
+      width: 100%;
+      /* height: 20%; */
+    }
+    .form input {
+      display: inline-block;
+      width: 100%;
+      height: 30%;
+    }
+  </style>
+  <body>
+    <div class="container"></div>
+  </body>
+</html>
+<script>
+  $(document).ready(function () {
+    for (let i = 0; i < 7; i++) {
+      let node = `
+        
+        <div class="drag">
+            <div>
+            <div class="form">
+                <div class="span-form">
+                <span>${i + 1}</span>
+                </div>
+                <input type="button" value="${i + 1}번 버튼" />
+            </div>
+            </div>
+        </div>
+        `;
+      $(".container").append(node);
+    }
+  });
+</script>
