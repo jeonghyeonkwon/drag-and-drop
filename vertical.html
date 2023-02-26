@@ -40,6 +40,8 @@
   </body>
 </html>
 <script>
+  const log = (name, el) => console.log(name, el);
+
   $(document).ready(function () {
     for (let i = 0; i < 5; i++) {
       let node = `
@@ -52,17 +54,25 @@
       `;
       $(".container").append(node);
     }
-  });
-  const log = (name, el) => console.log(name, el);
-  const _ = (select) => document.querySelectorAll(select);
-
-  const drag = _(".drag");
-  const container = _(".container");
-
-  drag.forEach((node) => {
-    node.addEventListener("dragstart", () => {
-      log("start", this);
-      log("start", node);
+    let drag = $(".container").find(".drag");
+    drag.each(function () {
+      $(this).on("dragstart", function () {
+        $(this).addClass("dragging");
+      });
+      $(this).on("dragend", function () {
+        $(this).addClass("dragging");
+      });
+    });
+    function getDragAfterElement(y) {
+      const draggableElements = [...$(".drag:not(.dragging)")];
+      log("draggableElements", draggableElements);
+      return;
+    }
+    $(".container").on("dragover", function (e) {
+      e.preventDefault();
+      log("e", e);
+      getDragAfterElement(e.clientY);
+      let target = $(".dragging");
     });
   });
 </script>
