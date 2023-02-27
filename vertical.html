@@ -60,7 +60,7 @@
         $(this).addClass("dragging");
       });
       $(this).on("dragend", function () {
-        $(this).addClass("dragging");
+        $(this).removeClass("dragging");
       });
     });
     function getDragAfterElement(y) {
